@@ -31,6 +31,7 @@ import { useLanguage } from "@/lib/i18n/language-context"
 import LanguageComparison from "@/components/language-comparison"
 import AnimalGuide from "@/components/animal-guide"
 import { getLocationImages } from "@/lib/image-utils"
+import SafeImage from "@/components/ui/safe-image"
 
 export default function DayDetailPage() {
   const params = useParams()
@@ -231,13 +232,11 @@ export default function DayDetailPage() {
       {/* Hero Section */}
       <div className="relative rounded-xl overflow-hidden mb-8">
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 z-10" />
-        <img
+        <SafeImage
           src={getLocationImages(dayData.to)[0].src || "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+          fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           alt={`Day ${dayData.day} - ${dayData.title}`}
           className="w-full h-[40vh] object-cover"
-          onError={(e) => {
-            e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-          }}
         />
         <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8">
           <Badge className="mb-2 w-fit bg-emerald-600">Day {dayData.day}</Badge>
@@ -297,13 +296,11 @@ export default function DayDetailPage() {
               {/* Destination Images */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-lg overflow-hidden">
-                  <img
+                  <SafeImage
                     src={getLocationImages(dayData.from)[0].src || "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+                    fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     alt={`${dayData.from} - Starting Point`}
                     className="w-full h-48 object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-                    }}
                   />
                   <div className="bg-stone-50 p-2 text-center">
                     <p className="text-sm font-medium">{dayData.from}</p>
@@ -311,13 +308,11 @@ export default function DayDetailPage() {
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden">
-                  <img
+                  <SafeImage
                     src={getLocationImages(dayData.to)[0].src || "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+                    fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     alt={`${dayData.to} - Destination`}
                     className="w-full h-48 object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-                    }}
                   />
                   <div className="bg-stone-50 p-2 text-center">
                     <p className="text-sm font-medium">{dayData.to}</p>
@@ -403,13 +398,11 @@ export default function DayDetailPage() {
                 {dayHikes.map((hike, index) => (
                   <Card key={index} className="overflow-hidden">
                     <div className="relative h-64">
-                      <img
+                      <SafeImage
                         src={hike.imageUrl || "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+                        fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                         alt={hike.name}
                         className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
                         <Badge
@@ -578,7 +571,7 @@ export default function DayDetailPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="rounded-lg overflow-hidden">
-                  <img
+                  <SafeImage
                     src={
                       dayData.accommodationType === "camping"
                         ? "https://images.pexels.com/photos/7245193/pexels-photo-7245193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -588,6 +581,7 @@ export default function DayDetailPage() {
                             ? "https://images.pexels.com/photos/216117/pexels-photo-216117.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                             : "https://images.pexels.com/photos/216076/pexels-photo-216076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     }
+                    fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     alt={dayData.accommodation}
                     className="w-full h-48 object-cover"
                   />

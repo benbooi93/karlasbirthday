@@ -5,6 +5,7 @@ import { MapPin, Calendar, Clock, Ruler, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { hikesData } from "@/lib/hikes-data"
+import SafeImage from "@/components/ui/safe-image"
 
 export default function HikesPage() {
   return (
@@ -55,13 +56,11 @@ function HikeCard({ hike }) {
   return (
     <Card className="overflow-hidden flex flex-col">
       <div className="relative h-48 overflow-hidden">
-        <img
+        <SafeImage
           src={hike.imageUrl || "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+          fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           alt={`${hike.name} hiking trail`}
           className="h-full w-full object-cover"
-          onError={(e) => {
-            e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-          }}
         />
         <div className="absolute top-2 right-2">
           <Badge className={hike.status === "confirmed" ? "bg-emerald-600" : "bg-amber-500"}>
