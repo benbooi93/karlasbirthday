@@ -76,7 +76,13 @@ export const en = {
   viewFullGallery: "View Full Gallery",
   birthdaySpecialPlans: "Special Birthday Plans",
   birthdaySpecialPlansDescription:
-    "We've planned a full day of special activities to celebrate Karla's birthday in Banff National Park, combining adventure, relaxation, and celebration.",
+    "We've planned a full day of special activities to celebrate Karla's birthday in Banff National Park on May 7th, combining adventure, relaxation, and celebration.",
+  birthdayActivities: [
+    "Morning hike to Lake Agnes Tea House with stunning mountain views",
+    "Relax at the Banff Upper Hot Springs, followed by a special birthday lunch with mountain views",
+    "Afternoon options: Tunnel Mountain hike or exploring Banff town",
+    "Celebratory dinner at a local restaurant with birthday cake and a toast to the birthday girl.",
+  ],
   morningActivity: "Morning Hike",
   morningActivityDescription:
     "Start the day with a scenic hike to Lake Agnes Tea House, enjoying breathtaking mountain views.",
@@ -267,7 +273,13 @@ export const es = {
   viewFullGallery: "Ver Galería Completa",
   birthdaySpecialPlans: "Planes Especiales de Cumpleaños",
   birthdaySpecialPlansDescription:
-    "Hemos planeado un día completo de actividades especiales para celebrar el cumpleaños de Karla en el Parque Nacional Banff, combinando aventura, relajación y celebración.",
+    "Hemos planeado un día completo de actividades especiales para celebrar el cumpleaños de Karla en el Parque Nacional Banff el 7 de mayo, combinando aventura, relajación y celebración.",
+  birthdayActivities: [
+    "Caminata matutina a la Casa de Té del Lago Agnes con impresionantes vistas a las montañas",
+    "Relajación en las Aguas Termales Superiores de Banff, seguidas de un almuerzo especial de cumpleaños con vistas a las montañas",
+    "Opciones para la tarde: caminata por Tunnel Mountain o exploración del pueblo de Banff",
+    "Cena de celebración en un restaurante local con pastel de cumpleaños y un brindis por la cumpleañera.",
+  ],
   morningActivity: "Caminata Matutina",
   morningActivityDescription:
     "Comienza el día con una caminata panorámica a la Casa de Té Lake Agnes, disfrutando de impresionantes vistas montañosas.",
