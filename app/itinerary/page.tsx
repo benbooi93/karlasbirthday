@@ -4,6 +4,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Calendar, Clock, MapPin, Car, Tent, Building, Home, ArrowRight, Ruler, TrendingUp } from "lucide-react"
 import { tripData } from "@/lib/trip-data"
 import Link from "next/link"
+import { getLocationImages } from "@/lib/image-utils"
+import SafeImage from "@/components/ui/safe-image"
 
 export default function ItineraryPage() {
   return (
@@ -25,13 +27,11 @@ export default function ItineraryPage() {
               <Card key={day.day} className="overflow-hidden">
                 <div className="relative h-40">
                   <div className="h-full w-full bg-stone-200">
-                    <img
-                      src={getLocationImage(day.to)}
+                    <SafeImage
+                      src={getLocationImages(day.to)[0].src}
+                      fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                       alt={`Day ${day.day} - ${day.title}`}
                       className="h-full w-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                      }}
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -100,13 +100,11 @@ export default function ItineraryPage() {
               <div key={day.day} className="border rounded-lg overflow-hidden">
                 <div className="relative h-64">
                   <div className="h-full w-full bg-stone-200">
-                    <img
-                      src={getLocationImage(day.to)}
+                    <SafeImage
+                      src={getLocationImages(day.to)[0].src}
+                      fallbackSrc="https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                       alt={`Day ${day.day} - ${day.title}`}
                       className="h-full w-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                      }}
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
