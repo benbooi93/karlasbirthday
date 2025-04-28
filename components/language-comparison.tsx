@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useLanguage } from "@/lib/i18n/language-context"
 import { languages } from "@/lib/i18n/translations"
@@ -38,8 +39,7 @@ export default function LanguageComparison() {
                     fill
                     className="object-cover"
                   >
-                    <Image src={languages.en.flag || "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"} alt="English flag" fill className="object-cover" />
-                  </div>
+                  </Image>
                 </div>
               </button>
             ))}
