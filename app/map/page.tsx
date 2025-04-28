@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin, Calendar, Clock, ArrowRight, Ruler, TrendingUp } from "lucide-react"
 import { tripData } from "@/lib/trip-data"
 import WeatherWidget from "@/components/weather-widget"
-import TripMap from "@/components/trip-map"
 import AnimalGuide from "@/components/animal-guide"
 
 export default function MapPage() {
@@ -52,154 +51,107 @@ export default function MapPage() {
     <main className="container py-8">
       <h1 className="text-3xl font-bold mb-6">Trip Route & Map</h1>
 
-      {/* Static Map Image */}
-      <div className="mb-8 rounded-lg overflow-hidden border shadow-md">
-        {GOOGLE_MAPS_API_KEY === "YOUR_GOOGLE_MAPS_API_KEY" ? (
-          <div className="bg-yellow-100 p-4 text-center text-yellow-800">
-            Please replace "YOUR_GOOGLE_MAPS_API_KEY" in the code with your actual Google Maps API key to display the map.
-          </div>
-        ) : (
-          <img
-            src={mapImageUrl}
-            alt="Map showing the road trip route from Vancouver to Banff"
-            width={mapWidth}
-            height={mapHeight}
-            className="w-full"
-          />
-        )}
-      </div>
-
       <div className="grid lg:grid-cols-3 gap-8">
+        {/* Main Content Area - Span 2 columns */}
         <div className="lg:col-span-2 space-y-8">
-          <Tabs defaultValue="destinations" value={activeTab} onValueChange={setActiveTab} className="w-full mb-6">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="destinations">Destinations & Routes</TabsTrigger>
-              <TabsTrigger value="wildlife">Wildlife Guide</TabsTrigger>
-            </TabsList>
-          </Tabs>
+          {/* Static Map Image - Moved here */}
+          <div className="mb-8 rounded-lg overflow-hidden border shadow-md">
+            {GOOGLE_MAPS_API_KEY === "YOUR_GOOGLE_MAPS_API_KEY" ? (
+              <div className="bg-yellow-100 p-4 text-center text-yellow-800">
+                Please replace "YOUR_GOOGLE_MAPS_API_KEY" in the code with your actual Google Maps API key to display the map.
+              </div>
+            ) : (
+              <img
+                src={mapImageUrl}
+                alt="Map showing the road trip route from Vancouver to Banff"
+                width={mapWidth}
+                height={mapHeight}
+                className="w-full"
+              />
+            )}
+          </div>
 
-          {activeTab === "destinations" && isMounted && <TripMap activeDay={Number.parseInt(activeDay)} />}
-
-          {activeTab === "wildlife" && <AnimalGuide />}
+          {/* Wildlife Guide - Moved below map */}
+          <h2 className="text-2xl font-bold">Wildlife Along the Route</h2>
+          <AnimalGuide />
         </div>
 
+        {/* Sidebar - Span 1 column */}
         <div className="space-y-6">
-          {activeTab === "destinations" && (
-            <Tabs defaultValue="1" value={activePeriod} onValueChange={setActivePeriod} className="w-full">
-              <TabsList className="grid grid-cols-3 mb-4">
-                <TabsTrigger value="1">Days 1-3</TabsTrigger>
-                <TabsTrigger value="4">Days 4-6</TabsTrigger>
-                <TabsTrigger value="7">Days 7-9</TabsTrigger>
-              </TabsList>
+          {/* Day Selection Tabs */}
+          <Tabs defaultValue="1" value={activePeriod} onValueChange={setActivePeriod} className="w-full">
+            <TabsList className="grid grid-cols-3 mb-4">
+              <TabsTrigger value="1">Days 1-3</TabsTrigger>
+              <TabsTrigger value="4">Days 4-6</TabsTrigger>
+              <TabsTrigger value="7">Days 7-9</TabsTrigger>
+            </TabsList>
 
-              <TabsContent value="1">
-                <div className="border rounded-lg p-4">
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {tripData.slice(0, 3).map((day) => (
-                      <button
-                        key={day.day}
-                        onClick={() => setActiveDay(day.day.toString())}
-                        className={`px-3 py-2 text-sm font-medium rounded-md ${
-                          activeDay === day.day.toString()
-                            ? "bg-emerald-600 text-white"
-                            : "bg-stone-100 hover:bg-stone-200"
-                        }`}
-                      >
-                        Day {day.day}
-                      </button>
-                    ))}
-                  </div>
-
-                  {renderDayDetails(dayData)}
+            <TabsContent value="1">
+              <div className="border rounded-lg p-4">
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {tripData.slice(0, 3).map((day) => (
+                    <button
+                      key={day.day}
+                      onClick={() => setActiveDay(day.day.toString())}
+                      className={`px-3 py-2 text-sm font-medium rounded-md ${
+                        activeDay === day.day.toString()
+                          ? "bg-emerald-600 text-white"
+                          : "bg-stone-100 hover:bg-stone-200"
+                      }`}
+                    >
+                      Day {day.day}
+                    </button>
+                  ))}
                 </div>
-              </TabsContent>
+                {renderDayDetails(dayData)}
+              </div>
+            </TabsContent>
 
-              <TabsContent value="4">
-                <div className="border rounded-lg p-4">
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {tripData.slice(3, 6).map((day) => (
-                      <button
-                        key={day.day}
-                        onClick={() => setActiveDay(day.day.toString())}
-                        className={`px-3 py-2 text-sm font-medium rounded-md ${
-                          activeDay === day.day.toString()
-                            ? "bg-emerald-600 text-white"
-                            : "bg-stone-100 hover:bg-stone-200"
-                        }`}
-                      >
-                        Day {day.day}
-                      </button>
-                    ))}
-                  </div>
-
-                  {renderDayDetails(dayData)}
+            <TabsContent value="4">
+              <div className="border rounded-lg p-4">
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {tripData.slice(3, 6).map((day) => (
+                    <button
+                      key={day.day}
+                      onClick={() => setActiveDay(day.day.toString())}
+                      className={`px-3 py-2 text-sm font-medium rounded-md ${
+                        activeDay === day.day.toString()
+                          ? "bg-emerald-600 text-white"
+                          : "bg-stone-100 hover:bg-stone-200"
+                      }`}
+                    >
+                      Day {day.day}
+                    </button>
+                  ))}
                 </div>
-              </TabsContent>
+                {renderDayDetails(dayData)}
+              </div>
+            </TabsContent>
 
-              <TabsContent value="7">
-                <div className="border rounded-lg p-4">
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {tripData.slice(6, 9).map((day) => (
-                      <button
-                        key={day.day}
-                        onClick={() => setActiveDay(day.day.toString())}
-                        className={`px-3 py-2 text-sm font-medium rounded-md ${
-                          activeDay === day.day.toString()
-                            ? "bg-emerald-600 text-white"
-                            : "bg-stone-100 hover:bg-stone-200"
-                        }`}
-                      >
-                        Day {day.day}
-                      </button>
-                    ))}
-                  </div>
-
-                  {renderDayDetails(dayData)}
+            <TabsContent value="7">
+              <div className="border rounded-lg p-4">
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {tripData.slice(6, 9).map((day) => (
+                    <button
+                      key={day.day}
+                      onClick={() => setActiveDay(day.day.toString())}
+                      className={`px-3 py-2 text-sm font-medium rounded-md ${
+                        activeDay === day.day.toString()
+                          ? "bg-emerald-600 text-white"
+                          : "bg-stone-100 hover:bg-stone-200"
+                      }`}
+                    >
+                      Day {day.day}
+                    </button>
+                  ))}
                 </div>
-              </TabsContent>
-            </Tabs>
-          )}
+                {renderDayDetails(dayData)}
+              </div>
+            </TabsContent>
+          </Tabs>
 
-          {dayData && activeTab === "destinations" && <WeatherWidget location={dayData.to} date={dayData.date} />}
-
-          {activeTab === "wildlife" && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Wildlife Viewing Tips</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-1">Best Times</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Dawn and dusk are typically the best times to spot wildlife, when many animals are most active.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-medium mb-1">Be Prepared</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Bring binoculars, a camera with zoom lens, and move quietly to increase your chances of wildlife
-                    sightings.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-medium mb-1">Safety First</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Always maintain a safe distance from wildlife. Never feed or approach wild animals, even if they
-                    appear tame.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-medium mb-1">Bear Safety</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Make noise while hiking, carry bear spray, and know how to use it. Travel in groups when possible.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          {/* Weather Widget - Stays in sidebar */}
+          {dayData && <WeatherWidget location={dayData.to} date={dayData.date} />}
         </div>
       </div>
     </main>

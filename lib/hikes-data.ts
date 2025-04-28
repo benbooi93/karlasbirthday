@@ -12,7 +12,7 @@ export const hikesData = [
       "A short evening hike with beautiful views of the Thompson River. Perfect for sunset views after setting up camp.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/31766206/pexels-photo-31766206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.alltrails.com/",
+    trailLink: "https://www.alltrails.com/canada/british-columbia/thompson-nicola-i",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const hikesData = [
       "Morning hike before continuing to Revelstoke. Features panoramic views of Paul Lake and surrounding mountains.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/16821531/pexels-photo-16821531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.alltrails.com/",
+    trailLink: "https://www.alltrails.com/trail/canada/british-columbia/gibraltar-rock-and-paul-lake",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const hikesData = [
       "A beautiful trail through Johnston Canyon with views of waterfalls. Features steel catwalks fixed to the canyon walls.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/15436379/pexels-photo-15436379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonee-hiking/johnston",
+    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/bulletins/83beb6e9-6192-45ca-b448-f11300df7631",
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const hikesData = [
       "Scenic hike to the historic Lake Agnes Tea House with mountain views. The tea house has been serving tea since 1905.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/10290066/pexels-photo-10290066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonee-hiking/lakelouise",
+    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise",
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ export const hikesData = [
       "Optional afternoon hike with panoramic views of Banff. One of the most popular short hikes in Banff with great views of the town and Bow Valley.",
     status: "optional",
     imageUrl: "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonee-hiking/banff",
+    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff",
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ export const hikesData = [
     description: "Short walk to view the impressive Bow Falls. Located near the Fairmont Banff Springs Hotel.",
     status: "optional",
     imageUrl: "https://images.pexels.com/photos/19554875/pexels-photo-19554875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonee-hiking/banff",
+    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/escalade-scrambling/rundle",
   },
   {
     id: 7,
@@ -101,7 +101,7 @@ export const hikesData = [
       "Beautiful loop around the stunning Emerald Lake in Yoho National Park. The vibrant turquoise water is surrounded by mountains.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/12699494/pexels-photo-12699494.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.pc.gc.ca/en/pn-np/bc/yoho/activ/randonnee-hike",
+    trailLink: "https://www.pc.gc.ca/en/pn-np/bc/yoho/activ/randonnee-hike/courte-short",
   },
   {
     id: 8,
@@ -116,7 +116,7 @@ export const hikesData = [
       "Pleasant trail along the river in Golden. Great for spotting local wildlife and enjoying river views.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/216076/pexels-photo-216076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.alltrails.com/",
+    trailLink: "https://www.alltrails.com/trail/canada/british-columbia/golden-rotary-trail",
   },
   {
     id: 9,
@@ -130,7 +130,7 @@ export const hikesData = [
     description: "Morning hike through beautiful forest before departing Revelstoke. Features old-growth cedar trees.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/5064661/pexels-photo-5064661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.alltrails.com/",
+    trailLink: "https://www.alltrails.com/trail/canada/british-columbia/inspiration-woods-trail--2",
   },
   {
     id: 10,
@@ -145,7 +145,7 @@ export const hikesData = [
       "Various hiking options with views of Okanagan Lake and Kelowna. The Apex Trail to the summit offers the best views.",
     status: "confirmed",
     imageUrl: "https://images.pexels.com/photos/16821531/pexels-photo-16821531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.kelowna.ca/parks-recreation/parks/knox-mountain-park",
+    trailLink: "https://www.kelowna.ca/parks-recreation/parks-beaches/parks-beaches-listing/knox-mountain-park",
   },
   {
     id: 11,
@@ -160,7 +160,7 @@ export const hikesData = [
       "Optional add-on hike en route to Vancouver with stunning turquoise lakes. Features three beautiful glacier-fed lakes with increasing elevation.",
     status: "optional",
     imageUrl: "https://images.pexels.com/photos/7671863/pexels-photo-7671863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://bcparks.ca/explore/parkpgs/joffre_lks/",
+    trailLink: "https://bcparks.ca/joffre-lakes-park/",
   },
   {
     id: 12,
@@ -175,6 +175,6 @@ export const hikesData = [
       "Accessible via gondola (seasonal), these alpine meadows offer spectacular wildflower displays in summer and stunning mountain views.",
     status: "optional",
     imageUrl: "https://images.pexels.com/photos/31747370/pexels-photo-31747370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    trailLink: "https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonee-hiking/sunshine",
+    trailLink: "https://www.banffsunshinemeadows.com/",
   },
 ]

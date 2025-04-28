@@ -214,7 +214,7 @@ export default function HikeDetailPage() {
 
                 <div className="pt-4 border-t">
                   <Button asChild className="w-full">
-                    <a href={hike.trailLink || "https://www.alltrails.com/"} target="_blank" rel="noopener noreferrer">
+                    <a href={hike.trailLink || `https://www.alltrails.com/search?q=${encodeURIComponent(hike.name)}`} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View on AllTrails
                     </a>

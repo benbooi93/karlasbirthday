@@ -751,7 +751,7 @@ export default function DayDetailPage() {
                 {dayData.accommodationType === "hotel" && (
                   <Button asChild variant="outline" className="w-full">
                     <a
-                      href="https://www.marriott.com/en-us/hotels/yycox-moxy-banff/overview/"
+                      href="https://www.marriott.com/en-us/hotels/yycbm-moxy-banff/overview/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -762,7 +762,7 @@ export default function DayDetailPage() {
                 )}
                 {dayData.accommodationType === "camping" && (
                   <Button asChild variant="outline" className="w-full">
-                    <a href="https://bcparks.ca/explore/parkpgs/juniper_bch/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://bcparks.ca/juniper-beach-park/" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Visit Park Website
                     </a>
